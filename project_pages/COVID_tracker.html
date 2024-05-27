@@ -18,7 +18,7 @@
     <p>SARS-CoV-2, the virus behind the COVID-19 pandemic, has caused over seven million deaths world-wide to date. Despite the approval of several COVID-19 vaccines since the end of 2020, the efficacy of these vaccines have waned as new SARS-CoV-2 variants take over, evading pre-existing immunity. As the virus mutates quickly, it is imperative that newly evolving variants be actively tracked so that updated vaccines can be promptly generated. The CDC reports SARS-CoV-2 variant proportions on a regular basis and updates a publicly accessible database with this information. In this tool, the <a href="https://covid.cdc.gov/covid-data-tracker/#variant-proportions">CDC SARS-CoV-2 variant proportions database</a> can be checked automatically at any interval of choice to determine if there is a new predominant variant in the US. If there is a new predominant variant, several additional data about the new variant are fetched including: variant predecessor, key mutations, and a link to that variant's <a href="https://outbreak.info">outbreak.info</a> page where more-detailed genetic info can be explored. MacOS Users are alerted of new variants via a simple notification badge on their desktop.</p>
   </div>
 </section>
-    <img src = "../images/projects/COVID_notification.jpg" alt= "COVID notification" class="middle" width=600px>
+    <img src = "../images/projects/COVID_notification.jpg" alt= "COVID notification" class="figure-image" width=600px>
 <section id='projdesc' class="projdesc-section">
   <div class="container">
     <h4>Methods</h4>
@@ -28,9 +28,9 @@
     <h4>Results</h4>
     <p>The script was run automatically using crontab on a daily basis to check for new predominant variants. Since the beginning of 2024, the JN.1 variant has been the predominant variant in the US, at one point representing over 80% of cases. However, at the end of April, this variant tracking tool sent a notification that there is was new predominant variant: KP.2.</p>
     <div class="projdesc-figure">
-        <img src="../images/projects/COVID_df.png" class="card-img-top" alt="Project 1">
+        <img src="../images/projects/COVID_df.png" class="figure-image" alt="Project 1">
         <br>
-        <img src="../images/projects/COVID_chart.jpg" class="card-img-top" alt="Project 1">
+        <img src="../images/projects/COVID_chart.jpg" class="figure-image" alt="Project 1">
         <div class="figure-body">
             <h5 class="figure-title">SARS-CoV-2 variant proportions in the US on the week ending on 2024-04-27</h5>
             <p class="figure-text">Real-time variant proportions are downloaded from the CDC COVID-19 variant proportions database and analyzed against previous data. The data is sorted with the current predominant variant at the top of the table. When a new predominant variant is detected, the user is alerted and key genetic data for the new variant is downloaded.</p>
@@ -40,9 +40,9 @@
     <p>A text file with additional genetic information about the new KP.2 variant was also created, containing important information about KP.2's ancestor (shedding light on how closely related it is to the previous strain) as well as the key mutations that it has picked up. The text file also contained a direct link to the new variant's page on outbreak.info for more in depth genetic and epidemiological data exploration</p>
 
     <div class="projdesc-figure">
-        <img src="../images/projects/COVID_text.jpg" class="card-img-top" alt="Project 1">
+        <img src="../images/projects/COVID_text.jpg" class="figure-image" alt="Project 1">
         <br>
-        <img src="../images/projects/outbreak_info.png" class="card-img-top" alt="Project 1">
+        <img src="../images/projects/outbreak_info.png" class="figure-image" alt="Project 1">
         <div class="figure-body">
             <h5 class="figure-title">KP.2 is a descendant of JN.1 and is on the rise since March 2024</h5>
             <p class="figure-text">In the output text file, some lineage info about KP.2 is provided along with the key mutations that the variant has picked up. It also includes a direct link to the KP.2 variant info page on outbreak.info where the proportion of KP.2 in the US can be seen in greater detail.</p>
