@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Brian Hua - SARS-CoV2 Variant Tracker</title>
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+<link rel="stylesheet" href="../css/my_style.css">
+
+</head>
+<body>
+
+<section id='projdesc' class="projdesc-section">
+  <div class="container">
+    <h2>Automated tracking of new SARS-CoV-2 variants for accelerated vaccine design</h2>
+    <h4>Background and rationale</h4>
+    <p>SARS-CoV-2, the virus behind the COVID-19 pandemic, has caused over seven million deaths world-wide to date. Despite the approval of several COVID-19 vaccines since the end of 2020, the efficacy of these vaccines have waned as new SARS-CoV-2 variants take over, evading pre-existing immunity. As the virus mutates quickly, it is imperative that newly evolving variants be actively tracked so that updated vaccines can be promptly generated. The CDC reports SARS-CoV-2 variant proportions on a regular basis and updates a publicly accessible database with this information. In this tool, the <a href="https://covid.cdc.gov/covid-data-tracker/#variant-proportions">CDC SARS-CoV-2 variant proportions database</a> can be checked automatically at any interval of choice to determine if there is a new predominant variant in the US. If there is a new predominant variant, several additional data about the new variant are fetched including: variant predecessor, key mutations, and a link to that variant's <a href="https://outbreak.info">outbreak.info</a> page where more-detailed genetic info can be explored. MacOS Users are alerted of new variants via a simple notification badge on their desktop.</p>
+  </div>
+</section>
+    <img src = "../images/projects/COVID_notification.jpg" alt= "COVID notification" class="middle" width=600px>
+<section id='projdesc' class="projdesc-section">
+  <div class="container">
+    <h4>Methods</h4>
+    <p>Queries to the CDC SARS-CoV-2 variant proportions database are made via the <a href="https://dev.socrata.com/foundry/data.cdc.gov/jr58-6ysp">data.cdc.gov API.</a> Data are filterd for the past month of data and sorted by data entry date and then by variant proportion. In the sorted table, the top line represents the latest predominant SARS-CoV-2 variant based on current data. This table is then stored locally as a csv file for future reference.</p>
+    <p>Using the crontab scheduler, this script can then be scheduled to run automatically at any desired frequency. When the script is run, the new data is downloaded and processed and the current predominant variant is determined. If the predominant variant from the current table is different from the predominant variant from the previous table, a notification will be sent to the user.</p>
+    <p>Finally, if there is a new predominant variant, key genetic information for that new variant is scraped from the <a href="https://www.who.int/activities/tracking-SARS-CoV-2-variants">World Health Organization</a> website including the immediate parent and the key mutations for the new variant. This info is saved to a text file for reference. The text file also includes a link to the relavant outbreak.info page.</p>
+    <h4>Results</h4>
+    <p>The script was run automatically using crontab on a daily basis to check for new predominant variants. Since the beginning of 2024, the JN.1 variant has been the predominant variant in the US, at one point representing over 80% of cases. However, at the end of April, this variant tracking tool sent a notification that there is was new predominant variant: KP.2.</p>
+    <div class="projdesc-figure">
+        <img src="../images/projects/COVID_df.png" class="card-img-top" alt="Project 1">
+        <br>
+        <img src="../images/projects/COVID_chart.jpg" class="card-img-top" alt="Project 1">
+        <div class="figure-body">
+            <h5 class="figure-title">SARS-CoV-2 variant proportions in the US on the week ending on 2024-04-27</h5>
+            <p class="figure-text">Real-time variant proportions are downloaded from the CDC COVID-19 variant proportions database and analyzed against previous data. The data is sorted with the current predominant variant at the top of the table. When a new predominant variant is detected, the user is alerted and key genetic data for the new variant is downloaded.</p>
+        </div>
+    </div>
+    <br>  
+    <p>A text file with additional genetic information about the new KP.2 variant was also created, containing important information about KP.2's ancestor (shedding light on how closely related it is to the previous strain) as well as the key mutations that it has picked up. The text file also contained a direct link to the new variant's page on outbreak.info for more in depth genetic and epidemiological data exploration</p>
+
+    <div class="projdesc-figure">
+        <img src="../images/projects/COVID_text.jpg" class="card-img-top" alt="Project 1">
+        <br>
+        <img src="../images/projects/outbreak_info.png" class="card-img-top" alt="Project 1">
+        <div class="figure-body">
+            <h5 class="figure-title">KP.2 is a descendant of JN.1 and is on the rise since March 2024</h5>
+            <p class="figure-text">In the output text file, some lineage info about KP.2 is provided along with the key mutations that the variant has picked up. It also includes a direct link to the KP.2 variant info page on outbreak.info where the proportion of KP.2 in the US can be seen in greater detail.</p>
+        </div>
+    </div>
+      
+  <div class="container">
+    <br>
+    <h4>Summary and conclusion</h4>
+    <p>As SARS-CoV-2 continues to evolve and cause respiratory disease across the globe, it is imperative that we track the circulation of new variants. Being able to quickly redesign COVID-19 vaccines will allow the faster deployment of updated vaccines that provide more potent protection against the most pressing strains at any given time.</p>
+    <p>By using this tool, new variants are checked on the CDC SARS-CoV-2 database automatically instead of the manual checking that is common among vaccine research groups. When a new predominant variant is detected, an alert is sent along with key pieces of genetic information for the new variant including the parental strain and the key mutations that have been acquired. This is helpful for rapid updated vaccine design as the key mutations are immediately highlighted, and researchers can quickly incorporate these changes into new vaccine constructs.</p>
+    <p>For future improvements to this tools, it would be useful to integrate the data output of this tool into the molecular cloning workflow of vaccine design. To do this, the tool could automatically download the sequence of the new variant from SARS-CoV-2 sequences databases like NCBI or GISAID and prepare them for insertion into a vaccine vector of choice. It would also be straightforward to incorporate tools for improved transgene expression like codon optimization.</p>
+    <a href="https://github.com/blhua/COVID_variant_tracker" class="btn btn-secondary">Source Code</a>
+  </div>
+</section>
+
+
+<!-- Contact Me Section -->
+<section id="contact" class="contact-section text-center text-white bg-dark">
+  <div class="container">
+    <h2>Contact Me</h2>
+    <div class="row justify-content-center">
+      <div class="col-lg-6">
+        <p><i class="fas fa-envelope"></i><a href="mailto:brianlhua@gmail.com">brianlhua@gmail.com</a>
+        <br>
+        <a href="https://blhua.github.io/CV/" class="btn btn-outline-primary">My full CV</a></p>
+      </div>
+    </div>
+    <div class="row justify-content-center">
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://linkedin.com/in/brianlhua" target="_blank">
+          <img src="../icons/linkedin.png" alt="LinkedIn" class="social-icon">
+          LinkedIn
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://x.com/brianlhua" target="_blank">
+          <img src="../icons/X.png" alt="X" class="social-icon">
+          X
+        </a>
+      </div>
+      <div class="col-lg-2 col-md-4 mb-4">
+        <a href="https://github.com/blhua" target="_blank">
+          <img src="../icons/github.png" alt="GitHub" class="social-icon">
+          GitHub
+        </a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Sticky Navigation Bar -->
+<nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="#home">SARS-CoV-2 variant tracker tool</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav ml-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="../index.html">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="#contact">Contact</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+
+<!-- Bootstrap JS and dependencies (jQuery and Popper) -->
+<script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.9.5/dist/umd/popper.min.js"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>
