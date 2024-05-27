@@ -18,7 +18,7 @@
     <p>The immune system plays a critical role in our ability to overcome infections. Furthermore, immune memory of a previous infection can provide very effective protection against future infection. The immune system function that is involved in immune memory consists of two separate but complementary arms: the antibody arm and the T-cell arm. Recently, T-cells have become a focus on immune system-based therapeutics and preventative drugs due to the ability of T-cells to target and get rid of cells that are already infected (for example with a virus or a bacterium). To do this, T-cells recognize small fragments of proteins called epitopes that are derived from the invading organism. Thus, if we can "pre-train" T-cells to recognize specific epitopes of an infectious agent of interest, we can effectively prepare the body to quickly contain a future infection before it can develop into disease.</p>
     <p>In this example, I focused on respiratory syncytial virus (RSV), a virus that can cause severe disease especially in infants, older adults, and immuno-compromised individuals. RSV is an enveloped virus that has two protein components on the outside, the G protein that is involved in the binding of the virus and the F protein that is involved of the fusion of the virus with the host cell.</p>
     <div class="projdesc-figure">
-        <img src="../images/projects/RSV_structure.jpg" class="card-img-top" alt="Project 1">
+        <img src="../images/projects/RSV_structure.jpg" class="figure-image" alt="Project 1">
         <div class="figure-body">
             <h5 class="figure-title">Schematic of the structure of respiratory syncytial virus (RSV)</h5>
             <p class="figure-text">RSV is an enveloped virus with two major proteins on its surface: the G attachment glycoprotein and the F fusion protein. FIgure from <a href="https://ijponline.biomedcentral.com/articles/10.1186/s13052-021-01148-8">Azzari et al. 2021. Italian Journal of Pediatrics.</a></p>
@@ -34,8 +34,8 @@
     <p>To get a sense of the overall conservation of the F and G proteins across the RSV sequences being examined, the percent conservation of each position in the G and F proteins was calculated.</p>
 
     <div class="projdesc-figure">
-        <img src="../images/projects/F_conservation.jpg" class="card-img-top" alt="Project 1">
-        <img src="../images/projects/G_conservation.jpg" class="card-img-top" alt="Project 1">
+        <img src="../images/projects/F_conservation.jpg" class="figure-image" alt="Project 1">
+        <img src="../images/projects/G_conservation.jpg" class="figure-image" alt="Project 1">
         <div class="figure-body">
             <h5 class="figure-title">Percent conservation at each position of the G and F proteins</h5>
             <p class="figure-text">A line plot of percent conservation of the most common amino acid at each position within the G and F proteins of RSV. 2413 and 2414 sequences were analyzed for G and F proteins, respectively.</p>
@@ -44,8 +44,8 @@
 <br>
 <p>Previous genetic diversity studies have shown that the G protein exhibits the most extensive protein sequence diversity of all the proteins of RSV (<a href="https://journals.asm.org/doi/10.1128/cmr.13.1.1">Sullender. 2000. Clin. Microbiol. Rev.</a>). From this set of sequences, it is clear that the G protein is less conserved across the protein compared to F protein. However, there are still some stretches of G protein that exhibit high conservation. To determine what these conserved epitopes are, epitope sequences from the G protein and F protein multiple sequence alignments were extracted and the conservation of each epitope was determined. The histogram of the number of epitopes for each conservation level are show below:</p>
     <div class="projdesc-figure">
-        <img src="../images/projects/F_histogram.jpg" class="card-img-top" alt="Project 1">
-        <img src="../images/projects/G_histogram.jpg" class="card-img-top" alt="Project 1">
+        <img src="../images/projects/F_histogram.jpg" class="figure-image" alt="Project 1">
+        <img src="../images/projects/G_histogram.jpg" class="figure-image" alt="Project 1">
         <div class="figure-body">
             <h5 class="figure-title">Histograms of number of epitopes at each conservation level for the RSV G and F proteins</h5>
             <p class="figure-text">8-, 9-, 10-, and 11-mer epitopes were extracted from the multiple sequence alignments for both the G and F protein. The conservation of each of these epitopes was determined, and the distribution of conservation level of the epitopes was plotted.</p>
@@ -54,7 +54,7 @@
     <br>  
     <p>As expected, there a lot fewer conserved epitopes in the G protein compared to the F protein. In fact, the vast majority of epitopes in the G protein are very poorly conserved compared to the F protein where there is a better distribution of conservation. Epitopes with a conservation of greater than or equal to 0.9 were then written to a CSV file for both proteins.</p>
     <div class="projdesc-figure">
-        <img src="../images/projects/FG_table.jpg" class="card-img-top" alt="Project 1">
+        <img src="../images/projects/FG_table.jpg" class="figure-image" alt="Project 1">
         <div class="figure-body">
             <h5 class="figure-title">Representative highly-conserved epitopes from the F and G proteins of RSV</h5>
             <p class="figure-text">The first ten epitopes with conservations of 0.9 or greater are shown. A total of 1080 conserved epitopes were found for F protein, and a total of 59 conserved epitopes were found for G protein.</p>
