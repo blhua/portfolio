@@ -41,6 +41,11 @@
   margin-left: auto;
   margin-right: auto;
   }
+  .projdesc-tableau {
+  box-shadow: 0 0 10px rgba(0,0,0,0.1); /* Adds a subtle shadow around the card */
+  margin-left: auto;
+  margin-right: auto;
+  }
   .figure-body {
   padding: 5px;
   text-align:left;
